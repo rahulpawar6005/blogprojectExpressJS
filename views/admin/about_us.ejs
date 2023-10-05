@@ -1,0 +1,144 @@
+<%- include('../../views/admin/adminHeader') %>
+
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary model_btn"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+>
+  <i class="fa fa-plus"></i> Add
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">About Model</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form action="/aboutblog" method="post" enctype="multipart/form-data">
+        <div class="modal-body">
+          <label for="" name="">Header</label>
+          <br />
+          <input size="45" type="text" name="header" value="" class="mb-3" />
+          <br />
+          <label for="" name="">Title</label>
+          <br />
+          <input size="45" type="text" name="title"  value="" class="mb-3" />
+          <br />
+          <label for="" name="">Description 1</label>
+          <br />
+          <input size="45" type="text" name="description_1" value="" class="mb-3" />
+          <br />
+          <label for="" name="">Description 2</label>
+          <br />
+          <input size="45" type="text" name="description_2" value="" class="mb-3" />
+          <br />
+       
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-12 mt-5">
+  <div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-8">
+              <h2>category <b>Details</b></h2>
+            </div>
+            <div class="col-sm-4">
+              <div class="search-box">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search&hellip;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr class="scrollmenu">
+              <!-- <i class="fa fa-sort"></i> -->
+              <th>id</th>
+              <th>header</th>
+              <th>title</th>
+              <th>description_1</th>
+              <th>description_2</th>
+              
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% a.forEach((item)=>{ %>
+
+            <tr>
+              <!-- <input type="file" id="myfile" name="myfile"> -->
+              <td><%= item._id %></td>
+              <td><%= item.header %></td>
+              <td><%= item.title %></td>
+              <td><%= item.description_1 %></td>
+              <td><%= item.description_2%></td>
+              
+           <td>
+                <a href="/aboutview/<%= item._id %>" class="view" title="View" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE417;</i></a
+                >
+                <a href="/aboutedit/<%= item._id %>" class="edit" title="Edit" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE254;</i></a
+                >
+                <a href="/admin/about/delete/<%= item._id %>" class="delete" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE872;</i></a
+                >
+              </td>
+            </tr>
+        
+            <%  })%>
+          </tbody>
+        </table>
+        <div class="clearfix">
+          <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a href="#"><i class="fa fa-angle-double-left"></i></a>
+            </li>
+            <li class="page-item"><a href="#" class="page-link">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item active">
+              <a href="#" class="page-link">3</a>
+            </li>
+            <li class="page-item"><a href="#" class="page-link">4</a></li>
+            <li class="page-item"><a href="#" class="page-link">5</a></li>
+            <li class="page-item">
+              <a href="#" class="page-link"
+                ><i class="fa fa-angle-double-right"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../../views/admin/adminFooter.ejs') %>

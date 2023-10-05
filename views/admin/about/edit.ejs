@@ -1,0 +1,32 @@
+<%- include('../adminHeader.ejs')%>
+<h3 class="text-center">Update List</h3>
+<form action="/aboutupdate/<%= edit._id %>" method="post" enctype="multipart/form-data">
+  <div class="modal-body text-center">
+    <label for="" name="">Header</label>
+    <br />
+    <input size="45" type="text" value="<%= edit.header %>"name="title" class="mb-3" />
+    <label for="" name="">Title</label>
+    <br />
+    <input size="45" type="text" value="<%= edit.title %>"name="title" class="mb-3" />
+    <br />
+    <label for="" name="">Description 1</label>
+    <br />
+    <textarea name="description" rows="4" cols="50"><%= edit.description_1 %></textarea>
+    <br/>
+    <label for="" name="">Description 2</label>
+    <br />
+    <textarea name="description" rows="4" cols="50"><%= edit.description_2 %></textarea>
+    <!-- <label for="" name="">Upload Image</label>
+    <br />
+   <input type="file" name="image_about">
+   <br/> -->
+   <!-- <div class="mt-4">
+    <img src="<%= edit.image_about.url %>" alt="" width="50px">
+   </div> -->
+   
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-info mt-4 ">Update</button>
+  </div>
+</form>
+<%- include('../adminFooter.ejs') %>

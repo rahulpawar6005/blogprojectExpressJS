@@ -1,0 +1,19 @@
+{
+  "name": "blogproject",
+  "version": "1.0.0",
+  "description": "My blog project at exoress js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Rahul Pawar",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^1.40.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "mongoose": "^6.12.0",
+    "nodemon": "^3.0.1"
+  }
+}

@@ -1,0 +1,21 @@
+<%- include('../adminHeader.ejs') %>
+
+<div class="card text-center" style="  position: absolute;
+left: 50px;
+width: calc(100% - 100px);
+margin:10px;
+padding: 5px;
+text-align: center;">
+  <div class="card-body">  <h4 class="card-title">Header</h4>
+    <h5 class="card-subtitle mb-2 text-muted"><%= view.header %></h5>
+    <h4 class="card-title">Title</h4>
+    <h5 class="card-subtitle mb-2 text-muted"><%= view.title %></h5>
+    <h4 class="card-title">Description 1</h4>
+    <p class="card-text"><%= view.description_1 %></p>
+    <h4 class="card-title">Description 2</h4>
+    <p class="card-text"><%= view.description_2 %></p>
+
+  </div>
+</div>
+
+<%- include('../adminFooter.ejs') %>
